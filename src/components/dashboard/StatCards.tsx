@@ -16,7 +16,7 @@ export function StatCards() {
                 <h3 className="text-lg font-semibold">You Need to hire</h3>
                 <a href="#" className="text-sm font-medium text-blue-600 hover:underline">View All</a>
             </div>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                 {stats.map((stat, index) => (
                     <Card key={index} className="border-none shadow-sm transition-shadow hover:shadow-md">
                         <CardContent className="flex flex-col items-center p-6 text-center">
