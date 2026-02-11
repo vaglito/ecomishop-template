@@ -31,8 +31,8 @@ export function RecruitmentTable() {
                 <h3 className="font-semibold leading-none tracking-tight">Recruitment Progress</h3>
                 <Button variant="secondary" size="sm">View All</Button>
             </div>
-            <div className="p-0">
-                <Table>
+            <div className="p-0 overflow-x-auto">
+                <Table className="min-w-[600px]">
                     <TableHeader>
                         <TableRow>
                             <TableHead>Full Name</TableHead>
@@ -70,7 +70,7 @@ export function RecruitmentTable() {
                         ))}
                     </TableBody>
                 </Table>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }
