@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
 import {
   LayoutGrid,
   Users,
@@ -13,6 +12,20 @@ import {
   LogOut,
   Settings,
 } from 'lucide-react';
+
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarRail,
+} from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 
 const sidebarItems = [
@@ -25,47 +38,51 @@ const sidebarItems = [
   { icon: GraduationCap, label: 'Training', href: '/dashboard/training' },
 ];
 
-export function Sidebar() {
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-screen w-64 flex-col border-r bg-sidebar text-sidebar-foreground">
-      <div className="flex h-16 items-center px-6">
-        <div className="flex items-center gap-2 font-bold text-xl text-primary">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
-            H
+    <Sidebar {...props}>
+      <SidebarHeader>
+        <div className="flex h-16 items-center px-4">
+          <div className="flex items-center gap-2 font-bold text-xl text-primary">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              H
+            </div>
+            <span>Hireism</span>
           </div>
-          <span>Hireism</span>
         </div>
-      </div>
-
-      <div className="flex-1 overflow-y-auto py-4">
-        <nav className="grid gap-1 px-2">
-          {sidebarItems.map((item, index) => {
-            const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href));
-            return (
-              <Link
-                key={index}
-                href={item.href}
-                className={cn(
-                  'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
-                  isActive ? 'bg-sidebar-primary text-sidebar-primary-foreground shadow-sm hover:bg-sidebar-primary hover:text-sidebar-primary-foreground' : 'text-muted-foreground'
-                )}
-              >
-                <item.icon className="h-4 w-4" />
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-
-      <div className="border-t p-4">
-        <Button variant="ghost" className="w-full justify-start gap-2 text-muted-foreground hover:text-foreground">
-          <LogOut className="h-4 w-4" />
-          Logout
-        </Button>
-      </div>
-    </div>
+      </SidebarHeader>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {sidebarItems.map((item) => {
+                const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href));
+                return (
+                  <SidebarMenuItem key={item.label}>
+                    <SidebarMenuButton asChild isActive={isActive} tooltip={item.label}>
+                      <Link href={item.href}>
+                        <item.icon />
+                        <span>{item.label}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )
+              })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+      <SidebarFooter>
+        <div className="p-4">
+          <Button variant="ghost" className="w-full justify-start gap-2 text-muted-foreground hover:text-foreground">
+            <LogOut className="h-4 w-4" />
+            Logout
+          </Button>
+        </div>
+      </SidebarFooter>
+      <SidebarRail />
+    </Sidebar>
   );
 }
