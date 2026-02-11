@@ -1,13 +1,13 @@
 'use client';
 
-import { Bell, Search, Settings } from 'lucide-react';
+import { Bell, Search, Settings, Plus } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export function Header() {
     return (
-        <header className="flex h-16 items-center justify-between border-b bg-background px-6">
+        <div className="flex w-full items-center justify-between">
             <div className="flex w-full max-w-md items-center gap-2">
                 <div className="relative w-full">
                     <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -19,10 +19,14 @@ export function Header() {
                 </div>
             </div>
 
-            <div className="flex items-center gap-4">
-                <Button>Add New</Button>
+            <div className="flex items-center gap-2 md:gap-4">
+                <Button size="sm" className="hidden md:flex">Add New</Button>
+                <Button size="icon" className="md:hidden h-8 w-8">
+                    <span className="sr-only">Add New</span>
+                    <Plus className="h-4 w-4" />
+                </Button>
 
-                <div className="flex items-center gap-2 text-muted-foreground">
+                <div className="flex items-center gap-1 md:gap-2 text-muted-foreground">
                     <Button variant="ghost" size="icon" className="h-9 w-9">
                         <Settings className="h-5 w-5" />
                     </Button>
@@ -43,6 +47,6 @@ export function Header() {
                     </Avatar>
                 </div>
             </div>
-        </header>
+        </div>
     );
 }
