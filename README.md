@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ecomishop Template - Modern E-commerce Frontend
 
-## Getting Started
+This project is the user interface (frontend) for the **Ecomishop** platform, built with the most modern and efficient web technologies in the React ecosystem.
 
-First, run the development server:
+## 🚀 Main Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The project uses a state-of-the-art tech stack to ensure performance, scalability, and an excellent developer experience:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   **[Next.js 16](https://nextjs.org/)**: Production-ready React framework, using App Router and Server Actions.
+*   **[React 19](https://react.dev/)**: The latest version of the most popular UI library.
+*   **[TypeScript](https://www.typescriptlang.org/)**: Robust static typing for safer development.
+*   **[Tailwind CSS v4](https://tailwindcss.com/)**: Utility-first CSS framework for rapid and flexible design.
+*   **[Shadcn/UI](https://ui.shadcn.com/)**: Reusable component collection built with **Radix UI** and **Tailwind CSS**.
+*   **[Lucide React](https://lucide.dev/)**: Modern and consistent iconography.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Project Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+*   **Modern & Responsive Design**: Interface adapted to all devices (mobile, tablet, desktop).
+*   **Modular Architecture**: Organized and maintainable code.
+*   **High Performance**: Optimized for speed and SEO with Next.js.
+*   **Reusable Components**: Consistent design system based on Shadcn/UI.
 
-## Learn More
+## 🛠️ Installation and Setup
 
-To learn more about Next.js, take a look at the following resources:
+Follow these steps to run the project locally:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Clone the repository:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    git clone <REPOSITORY_URL>
+    cd ecomishop-template
+    ```
 
-## Deploy on Vercel
+2.  **Install dependencies:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3.  **Configure environment variables:**
+
+    Create a `.env` file in the project root based on `.env.example` (if it exists, or create a new one with the necessary variables).
+
+4.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## 📜 Available Scripts
+
+*   `dev`: Starts the development server.
+*   `build`: Builds the application for production.
+*   `start`: Starts the production server after building.
+*   `lint`: Runs the linter to maintain code quality.
+
+---
+
+Developed with ❤️ for Ecomishop.
